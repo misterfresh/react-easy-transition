@@ -38,7 +38,7 @@ Multiple transitions on different properties:
 
 ## Live Demo
 
-Live Demo here : 
+Live Demo here : http://misterfresh.github.io/react-easy-transition
 
 ## Why use this
 

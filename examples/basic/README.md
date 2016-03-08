@@ -2,7 +2,9 @@ react-easy-transition basic example
 ===================================
 
 In components/App.js, we wrap props.children in an <EasyTransition> tag. That's it.
-Demo : 
+
+Demo : http://misterfresh.github.io/react-easy-transition
+
 Based on react-router-redux basic example. 
 
 This is a basic example that demonstrates rendering components based
