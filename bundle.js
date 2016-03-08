@@ -26503,19 +26503,19 @@
                     ' ',
                     _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '/' },
+                        { to: '/react-easy-transition/' },
                         'Home'
                     ),
                     ' ',
                     _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '/foo' },
+                        { to: '/react-easy-transition/foo' },
                         'Foo'
                     ),
                     ' ',
                     _react2.default.createElement(
                         _reactRouter.Link,
-                        { to: '/bar' },
+                        { to: '/react-easy-transition/bar' },
                         'Bar'
                     )
                 ),
@@ -26525,7 +26525,7 @@
                     _react2.default.createElement(
                         'button',
                         { onClick: function onClick() {
-                            return _reactRouter.browserHistory.push('/foo');
+                            return _reactRouter.browserHistory.push('/react-easy-transition/foo');
                         } },
                         'Go to /foo'
                     )
