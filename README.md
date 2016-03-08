@@ -48,7 +48,7 @@ Live Demo here : http://misterfresh.github.io/react-easy-transition
 * Performance : still using native browser CSS transition under the hood
 * Flexible : support for multiple transitions
 
-## Problems this solves
+## This module solves the following issues:
 
 * The fade-in effect when component mounts is rather straightforward to do with pure CSS transitions. However, the fade-out effect is impossible to do using only CSS because the component disappears immediately when unmounted.
 * The new component appears before the end of the fade-out transition of the previous component, so both are shown at the same time, one on top of the other.
