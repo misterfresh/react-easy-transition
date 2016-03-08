@@ -1,7 +1,9 @@
 react-easy-transition basic example
 ===================================
 
-In components/App.js, we wrap props.children in an <EasyTransition> tag. That's it.
+In components/App.js, we wrap props.children in an ```jsx
+<EasyTransition>
+``` tag. That's it.
 
 Demo : http://misterfresh.github.io/react-easy-transition
 
