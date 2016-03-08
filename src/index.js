@@ -1,1 +1,1 @@
-export EasyTransition from './easy-transition'
+export {default as default} from './easy-transition'

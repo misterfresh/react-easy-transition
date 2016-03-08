@@ -36,6 +36,10 @@ Multiple transitions on different properties:
 </EasyTransition>
 ```
 
+## Live Demo
+
+Live Demo here : 
+
 ## Why use this
 
 * Small : only 70 lines of code 
@@ -48,3 +52,7 @@ Multiple transitions on different properties:
 
 * The fade-in effect when component mounts is rather straightforward to do with pure CSS transitions. However, the fade-out effect is impossible to do using only CSS because the component disappears immediately when unmounted.
 * The new component appears before the end of the fade-out transition of the previous component, so both are shown at the same time, one on top of the other.
+
+## Example
+
+Go to the examples/basic directory to see an example of integration with react-router and redux
