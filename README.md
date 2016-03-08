@@ -8,7 +8,7 @@ Easy transitions in react and react-router
 
 ## Usage
 
-For a simple fade-out fade-in effect on page change with react-router :
+For a simple fade-out fade-in effect on route change with react-router :
 
 ```jsx
 import EasyTransition from 'react-easy-transition'
