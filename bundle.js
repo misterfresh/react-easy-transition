@@ -92,7 +92,7 @@
                     { history: history },
                     _react2.default.createElement(
                         _reactRouter.Route,
-                        { path: '/', component: _components.App },
+                        { path: '/react-easy-transition/', component: _components.App },
                         _react2.default.createElement(_reactRouter.IndexRoute, { component: _components.Home }),
                         _react2.default.createElement(_reactRouter.Route, { path: 'foo', component: _components.Foo }),
                         _react2.default.createElement(_reactRouter.Route, { path: 'bar', component: _components.Bar })
