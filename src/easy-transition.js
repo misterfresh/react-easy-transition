@@ -10,7 +10,8 @@ export default class EasyTransition extends Component {
         path: React.PropTypes.string.isRequired,
         initialStyle: React.PropTypes.object.isRequired,
         transition: React.PropTypes.string.isRequired,
-        finalStyle: React.PropTypes.object.isRequired
+        finalStyle: React.PropTypes.object.isRequired,
+        leaveStyle: React.PropTypes.object.isRequired
     };
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -36,10 +37,18 @@ export default class EasyTransition extends Component {
 
 class TransitionChild extends Component {
     componentWillAppear(callback) {
+        console.log('componentWillAppear');
         this.componentFadeIn(callback)
     }
+    componentDidAppear(){
+        console.log('componentDidAppear');
+    }
     componentWillEnter(callback) {
+        console.log('componentWillEnter');
         this.componentFadeIn(callback)
+    }
+    componentDidEnter() {
+        console.log('componentDidEnter');
     }
     componentFadeIn(callback) {
         Object.assign(this.page.style, this.props.initialStyle)
@@ -54,7 +63,8 @@ class TransitionChild extends Component {
         }, false)
     }
     componentWillLeave(callback) {
-        Object.assign(this.page.style, this.props.initialStyle)
+        console.log('componentWillLeave');
+        Object.assign(this.page.style, this.props.leaveStyle)
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--
@@ -62,6 +72,9 @@ class TransitionChild extends Component {
             callback()
             this.props.childDidLeave()
         }, false)
+    }
+    componentDidLeave() {
+        console.log('componentDidLeave');
     }
     render() {
         return <div ref={(ref) => this.page = ref}>
