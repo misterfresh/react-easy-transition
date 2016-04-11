@@ -13,7 +13,7 @@ For a simple fade-out fade-in effect on route change with react-router :
 ```jsx
 import EasyTransition from 'react-easy-transition'
 
-<EasyTransition 
+<EasyTransition
     path={location.pathname}
     initialStyle={{opacity: 0}}
     transition="opacity 0.3s ease-in"
@@ -26,11 +26,25 @@ import EasyTransition from 'react-easy-transition'
 Multiple transitions on different properties:
 
 ```jsx
-<EasyTransition 
+<EasyTransition
     path={location.pathname}
     initialStyle={{opacity: 0, color: 'red'}}
     transition="opacity 0.3s ease-in, color 0.5s ease-in"
     finalStyle={{opacity: 1, color: 'green'}}
+>
+    {this.props.children}
+</EasyTransition>
+```
+
+Set leave animation transition on different properties:
+
+```jsx
+<EasyTransition
+    path={location.pathname}
+    initialStyle={{opacity: 0, color: 'red'}}
+    transition="opacity 0.3s ease-in, color 0.5s ease-in"
+    finalStyle={{opacity: 1, color: 'green'}}
+    leaveStyle={{opacity: 0, color: 'gray'}}
 >
     {this.props.children}
 </EasyTransition>
@@ -42,8 +56,8 @@ Live Demo here : http://misterfresh.github.io/react-easy-transition
 
 ## Why use this
 
-* Small : only 70 lines of code 
-* Lightweight : based on ReactTransitionGroup low level API 
+* Small : only 70 lines of code
+* Lightweight : based on ReactTransitionGroup low level API
 * Easy: works out of the box with React Router 2.0, no need to define CSS classes, use Javascript objects to define transition styles.
 * Performance : still using native browser CSS transition under the hood
 * Flexible : support for multiple transitions
