@@ -37,18 +37,10 @@ export default class EasyTransition extends Component {
 
 class TransitionChild extends Component {
     componentWillAppear(callback) {
-        console.log('componentWillAppear');
         this.componentFadeIn(callback)
-    }
-    componentDidAppear(){
-        console.log('componentDidAppear');
     }
     componentWillEnter(callback) {
-        console.log('componentWillEnter');
         this.componentFadeIn(callback)
-    }
-    componentDidEnter() {
-        console.log('componentDidEnter');
     }
     componentFadeIn(callback) {
         Object.assign(this.page.style, this.props.initialStyle)
@@ -63,7 +55,6 @@ class TransitionChild extends Component {
         }, false)
     }
     componentWillLeave(callback) {
-        console.log('componentWillLeave');
         Object.assign(this.page.style, this.props.leaveStyle)
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
@@ -72,9 +63,6 @@ class TransitionChild extends Component {
             callback()
             this.props.childDidLeave()
         }, false)
-    }
-    componentDidLeave() {
-        console.log('componentDidLeave');
     }
     render() {
         return <div ref={(ref) => this.page = ref}>
