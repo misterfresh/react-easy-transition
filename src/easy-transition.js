@@ -55,7 +55,8 @@ class TransitionChild extends Component {
         }, false)
     }
     componentWillLeave(callback) {
-        Object.assign(this.page.style, this.props.leaveStyle)
+        let style = (this.props.leaveStyle) ? this.props.leaveStyle : this.props.initialStyle
+        Object.assign(this.page.style, style)
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--
