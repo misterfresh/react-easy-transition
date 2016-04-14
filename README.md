@@ -36,7 +36,7 @@ Multiple transitions on different properties:
 </EasyTransition>
 ```
 
-Set leave animation transition on different properties:
+Optionally set a leaveStyle if it is different than the initialStyle:
 
 ```jsx
 <EasyTransition
@@ -52,7 +52,7 @@ Set leave animation transition on different properties:
 
 ## Live Demo
 
-Live Demo here : http://misterfresh.github.io/react-easy-transition
+[Live Demo here](http://misterfresh.github.io/react-easy-transition)
 
 ## Why use this
 
@@ -66,7 +66,9 @@ Live Demo here : http://misterfresh.github.io/react-easy-transition
 
 * The fade-in effect when component mounts is rather straightforward to do with pure CSS transitions. However, the fade-out effect is impossible to do using only CSS because the component disappears immediately when unmounted.
 * The new component appears before the end of the fade-out transition of the previous component, so both are shown at the same time, one on top of the other.
+* Transition on initial render when rendering on the server
 
-## Example
+## Examples
 
-Go to the examples/basic directory to see an example of integration with react-router and redux
+* Integration with react-router and redux in examples/basic
+* Integration with server-side rendering in examples/server

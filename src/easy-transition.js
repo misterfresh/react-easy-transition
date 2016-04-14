@@ -7,11 +7,11 @@ export default class EasyTransition extends Component {
         visible: true
     };
     static propTypes = {
-        path: React.PropTypes.string.isRequired,
-        initialStyle: React.PropTypes.object.isRequired,
-        transition: React.PropTypes.string.isRequired,
-        finalStyle: React.PropTypes.object.isRequired,
-        leaveStyle: React.PropTypes.object.isRequired
+        path: PropTypes.string.isRequired,
+        initialStyle: PropTypes.object.isRequired,
+        transition: PropTypes.string.isRequired,
+        finalStyle: PropTypes.object.isRequired,
+        leaveStyle: PropTypes.object
     };
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -25,7 +25,7 @@ export default class EasyTransition extends Component {
     }
     render() {
         return (
-            <ReactTransitionGroup transitionName="fade">
+            <ReactTransitionGroup transitionName="fade" component="div">
                 {this.state.visible &&
                 <TransitionChild key={this.props.path} childDidLeave={this.childDidLeave.bind(this)} {...this.props}>
                     {this.props.children}
@@ -55,8 +55,8 @@ class TransitionChild extends Component {
         }, false)
     }
     componentWillLeave(callback) {
-        let style = (this.props.leaveStyle) ? this.props.leaveStyle : this.props.initialStyle
-        Object.assign(this.page.style, style)
+        let leaveStyle = this.props.leaveStyle ? this.props.leaveStyle : this.props.initialStyle
+        Object.assign(this.page.style, leaveStyle)
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--
@@ -66,7 +66,7 @@ class TransitionChild extends Component {
         }, false)
     }
     render() {
-        return <div ref={(ref) => this.page = ref}>
+        return <div ref={(ref) => this.page = ref} style={this.props.initialStyle}>
             {this.props.children}
         </div>
     }

@@ -1,16 +1,16 @@
 {
   "name": "ret-basic-example",
-  "version": "0.0.1",
-  "repository": "reactjs/react-easy-transition",
+  "version": "0.0.3",
+  "repository": "misterfresh/react-easy-transition",
   "license": "MIT",
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-easy-transition": "^0.0.2",
+    "react": "^0.14.0 || 15.0",
+    "react-dom": "^0.14.0 || 15.0",
     "react-redux": "^4.3.0",
     "react-router": "^2.0.0",
     "redux": "^3.2.1",
-    "react-router-redux": "^4.0.0"
+    "react-router-redux": "^4.0.0",
+    "react-easy-transition": "^0.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
@@ -29,7 +29,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --no-info --open",
-    "deploy": "NODE_ENV=production webpack -p"
+    "start": "webpack-dev-server --history-api-fallback --no-info --open"
   }
 }

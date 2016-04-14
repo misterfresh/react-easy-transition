@@ -1,90 +1,72 @@
 {
   "name": "react-easy-transition",
-  "title": "react-easy-transition",
-  "url": "https://github.com/misterfresh/react-easy-transition",
-  "author": {
-    "name": "Antoine Stollsteiner",
-    "url": "https://github.com/misterfresh"
-  },
-  "description": "Easy transitions with react and react-router",
-  "directories": {
-    "example": "examples"
-  },
+  "version": "0.0.3",
+  "description": "Easy transitions with React and React-router",
+  "main": "lib/easy-transition",
   "files": [
     "*.md",
     "LICENSE",
     "lib",
     "src"
   ],
-  "main": "lib/index",
-  "license": "MIT",
-  "version": "0.0.1",
-  "devDependencies": {
-    "babel-cli": "^6.1.2",
-    "babel-core": "^6.2.1",
-    "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.2.0",
-    "babel-polyfill": "^6.3.14",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-1": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "babel-register": "^6.4.3",
-    "eslint": "^1.10.3",
-    "eslint-config-rackt": "^1.1.1",
-    "eslint-plugin-react": "^3.15.0",
-    "expect": "^1.13.0",
-    "history": "^2.0.0",
-    "isparta": "^4.0.0",
-    "isparta-loader": "^2.0.0",
-    "react-dom": "^0.14.7",
-    "react-router": "^2.0.0",
-    "webpack": "^1.12.9"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/misterfresh/react-easy-transition.git"
   },
-  "dependencies": {
-    "react": "^0.14.8",
-    "react-addons-transition-group": "^0.14.8"
+  "author": {
+    "name": "Antoine Stollsteiner",
+    "url": "https://github.com/misterfresh"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
-  },
-  "bugs": {
-    "url": "https://github.com/misterfresh/react-easy-transition/issues"
+  "license": "MIT",
+  "scripts": {
+    "build": "mkdir -p lib && babel ./src -d lib",
+    "lint": "eslint examples src",
+    "prepublish": "npm run build"
   },
   "tags": [
     "react",
-    "react-router",
+    "redux",
     "transition",
     "css",
     "inline"
   ],
   "keywords": [
     "react",
-    "react-router",
+    "redux",
+    "router",
     "transition",
     "css",
-    "inline",
-    "router"
+    "inline"
   ],
-  "scripts": {
-    "build": "mkdir -p lib && babel ./src -d lib",
-    "lint": "eslint examples src test",
-    "prepublish": "npm run build"
+  "devDependencies": {
+    "babel-cli": "^6.1.2",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
+    "babel-plugin-transform-es3-property-literals": "^6.5.0",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "eslint": "^1.10.3",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^3.15.0",
+    "history": "^2.0.0",
+    "isparta": "^4.0.0",
+    "isparta-loader": "^2.0.0",
+    "react-dom": "^0.14.0 || 15.0",
+    "react-redux": "^4.4.0",
+    "react-router": "^2.0.0",
+    "redux": "^3.0.4",
+    "redux-devtools": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
+    "webpack": "^1.12.9"
   },
-  "verb": {
-    "related": {
-      "list": [
-        "react",
-        "react-router"
-      ]
-    }
+  "dependencies": {
+    "react": "^0.14.0 || 15.0",
+    "react-addons-transition-group": "^0.14.0 || 15.0"
   }
 }

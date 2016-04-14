@@ -1,15 +1,13 @@
-react-easy-transition basic example
-===================================
+react-easy-transition server example
+====================================
 
-In components/App.js, we wrap props.children in an 
+In routes.js, we wrap props.children in an 
 ```jsx
 <EasyTransition>
 ``` 
 tag. That's it.
 
-Demo : [http://misterfresh.github.io/react-easy-transition](http://misterfresh.github.io/react-easy-transition)
-
-Based on react-router-redux basic example. 
+Based on react-router-redux server example. 
 
 This is a basic example that demonstrates rendering components based
 on URLs with `react-router` as well as connecting them to Redux state.
