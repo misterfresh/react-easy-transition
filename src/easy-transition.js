@@ -11,7 +11,9 @@ export default class EasyTransition extends Component {
         initialStyle: PropTypes.object.isRequired,
         transition: PropTypes.string.isRequired,
         finalStyle: PropTypes.object.isRequired,
-        leaveStyle: PropTypes.object
+        leaveStyle: PropTypes.object,
+        className: PropTypes.string,
+        component: PropTypes.string
     };
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -25,7 +27,8 @@ export default class EasyTransition extends Component {
     }
     render() {
         return (
-            <ReactTransitionGroup transitionName="fade" component="div">
+            <ReactTransitionGroup transitionName="fade" className={this.props.className}
+                                  component={this.props.component || "div"}>
                 {this.state.visible &&
                 <TransitionChild key={this.props.path} childDidLeave={this.childDidLeave.bind(this)} {...this.props}>
                     {this.props.children}
