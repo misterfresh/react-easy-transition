@@ -49,10 +49,11 @@ class TransitionChild extends Component {
         this.componentFadeIn(callback)
     }
     componentFadeIn(callback) {
+        let page = this.page, finalStyle = this.props.finalStyle
         Object.assign(this.page.style, this.props.initialStyle)
         Object.keys(this.props.initialStyle).forEach(property => window.getComputedStyle(this.page)[property])
         this.page.style.transition = this.props.transition
-        setTimeout(() => Object.assign(this.page.style, this.props.finalStyle))
+        setTimeout( () => Object.assign(page.style, finalStyle) )
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--

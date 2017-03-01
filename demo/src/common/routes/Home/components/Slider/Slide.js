@@ -13,11 +13,11 @@ let Slide = ({
   caption,
   active
 }) =>
-  <div className={css(styles.slide, active && styles.active)}>
+  <div className={css(styles.slide)}>
     <img src={Env().assets + image} className={css(styles.image)}/>
     <div className={css(styles.caption)}>
-      {caption.get('title') && <MainTitle title={caption.get('title')}/>}
-      {caption.get('description') && <Paragraph>
+      {caption.get('title') && <MainTitle title={caption.get('title')} classes={[styles.white]}/>}
+      {caption.get('description') && <Paragraph classes={[styles.white]}>
         {caption.get('description')}
       </Paragraph>}
     </div>
@@ -27,19 +27,12 @@ export default Slide
 
 let styles = StyleSheet.create({
   slide: {
-    opacity: 0,
-    pointerEvents: 'none',
     overflow: 'hidden',
     width: '100%',
     maxHeight: 550,
     height: 'auto',
-    transition: 'opacity .6s ease-in-out',
-    backfaceVisibility: 'hidden',
     perspective: '1000px',
     position: 'relative',
-    display: 'none',
-  },
-  active: {
     display: 'block',
     pointerEvents: 'auto',
     opacity: 1,
@@ -68,5 +61,8 @@ let styles = StyleSheet.create({
       left: '20%',
       paddingBottom: 30
     }
+  },
+  white: {
+    color: '#fff'
   }
 })

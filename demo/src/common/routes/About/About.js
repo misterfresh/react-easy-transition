@@ -26,7 +26,7 @@ class About extends Component {
 
           <Row>
             <Column>
-              <p>React Easy Transition makes it easy to create transition effects </p>
+              <p>React Easy Transition makes it easy to create transition effects between different pages of your application. </p>
               <p></p>
             </Column>
           </Row>

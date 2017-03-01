@@ -5,11 +5,18 @@ import {StyleSheet, css} from 'aphrodite/no-important'
 import Row from 'components/Grid/Row'
 import Column from 'components/Grid/Column'
 
-let Headline = ({ title }) =>
+let Headline = ({
+  title,
+  classes = []
+}) =>
   <Row>
     <Column>
       <div className={css(styles.headline)}>
-        <h2 className={css(styles.title)}>
+        <h2 className={
+          css(
+            styles.title,
+            ...classes
+          )}>
           {title}
         </h2>
       </div>

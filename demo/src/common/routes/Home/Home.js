@@ -50,6 +50,12 @@ class Home extends Component {
         browseSlide={homeActions.browseSlide}
         setActiveSlide={homeActions.setActiveSlide}
         activeSlideId={activeSlideId}
+        transition={{
+          path: ('slide-' + activeSlideId),
+          initialStyle: { opacity: 0 },
+          transition: "opacity 0.5s ease-in-out",
+          finalStyle: { opacity: 1}
+        }}
       />
     </div>
   }

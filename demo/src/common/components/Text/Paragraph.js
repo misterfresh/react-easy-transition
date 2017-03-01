@@ -3,10 +3,14 @@ import React, {PropTypes, Component} from 'react'
 import {StyleSheet, css} from 'aphrodite/no-important'
 
 let Paragraph = ({
-  style, children
+  style, children,
+  classes = []
 }) =>
   <p
-    className={css(styles.paragraph)}
+    className={css(
+      styles.paragraph,
+      ...classes
+    )}
     style={style}
   >
     {children}

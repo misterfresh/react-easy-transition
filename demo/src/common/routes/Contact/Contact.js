@@ -25,7 +25,7 @@ class Contact extends Component {
 
           <Row>
             <Column size='large'>
-              A contact page.
+              There could be a contact form here.
             </Column>
           </Row>
         </Container>

@@ -8,7 +8,8 @@ import SlidesWrapper from './SlidesWrapper'
 
 let Slider = ({
   slides, activeSlideId,
-  browseSlide, setActiveSlide
+  browseSlide, setActiveSlide,
+  transition
 }) =>
   <section id="intro" style={{display: 'block'}} className={css(styles.carousel)}>
     <Indicators
@@ -18,8 +19,10 @@ let Slider = ({
     />
 
     <SlidesWrapper
-      slides={slides}
+      slide={slides.toIndexedSeq().get(activeSlideId)}
       activeSlideId={activeSlideId}
+      slides={slides}
+      transition={transition}
     />
 
     <Control

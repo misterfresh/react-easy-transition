@@ -2,9 +2,15 @@
 import React, {PropTypes, Component} from 'react'
 import {StyleSheet, css} from 'aphrodite/no-important'
 
-let MainTitle = ({ title }) =>
+let MainTitle = ({
+  title,
+  classes = []
+}) =>
   <h1
-    className={css(styles.mainTitle)}
+    className={css(
+      styles.mainTitle,
+      ...classes
+    )}
   >
     {title}
   </h1>
