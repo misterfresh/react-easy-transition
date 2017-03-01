@@ -27,8 +27,11 @@ export default class EasyTransition extends Component {
     }
     render() {
         return (
-            <ReactTransitionGroup transitionName="fade" className={this.props.className}
-                                  component={this.props.component || "div"}>
+            <ReactTransitionGroup
+              transitionName="fade"
+              className={this.props.className}
+              component={this.props.component || "div"}
+            >
                 {this.state.visible &&
                 <TransitionChild key={this.props.path} childDidLeave={this.childDidLeave.bind(this)} {...this.props}>
                     {this.props.children}
@@ -49,7 +52,7 @@ class TransitionChild extends Component {
         Object.assign(this.page.style, this.props.initialStyle)
         Object.keys(this.props.initialStyle).forEach(property => window.getComputedStyle(this.page)[property])
         this.page.style.transition = this.props.transition
-        Object.assign(this.page.style, this.props.finalStyle)
+        setTimeout(() => Object.assign(this.page.style, this.props.finalStyle))
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--

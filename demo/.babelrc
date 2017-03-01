@@ -1,0 +1,34 @@
+{
+  "presets": ["es2015", "react", "stage-1"],
+  "env": {
+    "production": {
+      "plugins": ["transform-react-constant-elements", "transform-react-inline-elements"]
+    }
+  },
+  "plugins": [
+    ["transform-runtime"],
+    ["module-alias", [
+      { "src":"./src/client", "expose": "client"},
+      { "src":"./src/common/actions", "expose": "actions"},
+      { "src":"./assets", "expose": "assets"},
+      { "src":"./src/common", "expose": "common"},
+      { "src":"./src/common/components", "expose": "components"},
+      { "src":"./src/common/constants.js", "expose": "constants"},
+      { "src":"./src/common/containers", "expose": "containers"},
+      { "src":"./public", "expose": "public"},
+      { "src":"./src/common/reducers", "expose": "reducers"},
+      { "src":"./src/common/routes", "expose": "routes"},
+      { "src":"./src/common/store", "expose": "store"},
+      { "src":"./test", "expose": "test"},
+      { "src":"./tools", "expose": "tools"},
+      { "src":"./src/common/utils", "expose": "utils"},
+      { "src":"./node_modules", "expose": "node_modules"},
+      { "src":"./../src/react-easy-transition.js", "expose": "react-easy-transition"}
+    ]],
+    ["transform-object-assign"],
+    ["transform-decorators-legacy"]
+  ],
+  "ignore": [
+    "*.css"
+  ]
+}

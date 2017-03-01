@@ -1,6 +1,6 @@
 {
   "name": "react-easy-transition",
-  "version": "0.0.5",
+  "version": "1.2.3",
   "description": "Easy transitions with React and React-router",
   "main": "lib/easy-transition",
   "files": [
@@ -19,9 +19,14 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "mkdir -p lib && babel ./src -d lib",
-    "lint": "eslint examples src",
-    "prepublish": "npm run build"
+    "lint": "eslint demo src",
+    "prepublish": "npm run build",
+    "build": "npm run clean && npm run build-lib",
+    "clean": "npm run delete-lib && npm run prepare-lib",
+    "delete-lib": "./node_modules/.bin/rimraf lib",
+    "prepare-lib": "./node_modules/.bin/mkdirp lib",
+    "build-lib": "babel ./src -d ./lib -s",
+    "test": "mocha --reporter=nyan --compilers js:babel-core/register --require ./test/test-helper.js --recursive"
   },
   "tags": [
     "react",
@@ -38,36 +43,40 @@
     "css",
     "inline"
   ],
+  "dependencies": {
+    "react": "^0.14.0 || ^15.0",
+    "react-addons-transition-group": "^0.14.0 || ^15.0"
+  },
   "devDependencies": {
-    "babel-cli": "^6.1.2",
-    "babel-core": "^6.7.4",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
     "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.2.0",
+    "babel-loader": "^6.2.9",
     "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
     "babel-plugin-transform-es3-property-literals": "^6.5.0",
     "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
     "babel-polyfill": "^6.7.4",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-1": "^6.3.13",
-    "babel-register": "^6.4.3",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "chokidar": "^1.6.1",
+    "enzyme": "^2.6.0",
     "eslint": "^1.10.3",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^3.15.0",
     "history": "^2.0.0",
     "isparta": "^4.0.0",
     "isparta-loader": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "querystring": "^0.2.0",
     "react-dom": "^0.14.0 || 15.0",
-    "react-redux": "^4.4.0",
-    "react-router": "^2.0.0",
-    "redux": "^3.0.4",
-    "redux-devtools": "^3.0.0",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.1",
-    "webpack": "^1.12.9"
-  },
-  "dependencies": {
-    "react": "^0.14.0 || ^15.0",
-    "react-addons-transition-group": "^0.14.0 || ^15.0"
+    "rimraf": "^2.6.0",
+    "sinon": "^1.17.6"
   }
 }

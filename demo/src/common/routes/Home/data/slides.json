@@ -1,0 +1,30 @@
+[
+  {
+    "image":"assets/images/slideshow/slide1.jpg",
+    "caption":{
+      "title":"we optimize everyone's job related use of social networks",
+      "description":false
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide2.jpg",
+    "caption":{
+      "title":"Recruiters",
+      "description":"receive qualified candidates and only pay on result"
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide3.jpg",
+    "caption":{
+      "title":false,
+      "description":false
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide4.jpg",
+    "caption":{
+      "title":false,
+      "description":false
+    }
+  }
+]

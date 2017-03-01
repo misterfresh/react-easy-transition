@@ -1,0 +1,8 @@
+{
+  "name": "React Easy Transition Demo",
+  "description": "Easy transitions with react-router",
+  "repository": "https://github.com/misterfresh/react-easy-transition",
+  "logo": "https://s3-eu-west-1.amazonaws.com/react-easy-transition/assets/images/logo/apple-icon.png",
+  "keywords": ["react", "transition", "render"],
+  "image": "react-easy-transition"
+}

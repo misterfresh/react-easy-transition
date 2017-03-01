@@ -1,7 +1,7 @@
 # React Easy Transition
 
 ```
-npm install react-easy-transition
+npm install react-easy-transition --save
 ```
 
 Easy transitions in react and react-router
@@ -54,7 +54,7 @@ Optionally set a leaveStyle if it is different than the initialStyle:
 
 [Live Demo here](http://misterfresh.github.io/react-easy-transition)
 
-## Why use this
+## Features
 
 * Small : only 70 lines of code
 * Lightweight : based on ReactTransitionGroup low level API
@@ -68,7 +68,6 @@ Optionally set a leaveStyle if it is different than the initialStyle:
 * The new component appears before the end of the fade-out transition of the previous component, so both are shown at the same time, one on top of the other.
 * Transition on initial render when rendering on the server
 
-## Examples
+## Example
 
-* Integration with react-router and redux in examples/basic
-* Integration with server-side rendering in examples/server
+* Integration with react-router, redux, and server-side rendering in ./demo/
