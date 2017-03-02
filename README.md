@@ -67,7 +67,7 @@ You can set a custom component or classname if needed
 
 ## Live Demo
 
-[Live Demo here](http://misterfresh.github.io/react-easy-transition)
+[Live Demo here](https://react-easy-transition.herokuapp.com/)
 
 ## Features
 
