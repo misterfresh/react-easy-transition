@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../src/common/reducers/links/index.js"],"names":["mainLinks"],"mappings":"AAAA;;;;;;;;;;;;;QAEOA,S","file":"index.js","sourcesContent":["'use strict'\r\n\r\nexport mainLinks from './mainLinks.json'\r\n\r\n"]}

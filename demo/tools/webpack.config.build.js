@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      path.join(process.cwd(), 'src/client/client.js')
+      path.join(process.cwd(), 'demo/src/client/client.js')
     ],
     vendors: [
       'aphrodite',
@@ -27,7 +27,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(process.cwd(), 'src', 'build', 'client'),
+    path: path.join(process.cwd(), 'demo', 'build', 'client'),
     filename: '[name].min.js',
     publicPath: '/'
   },
@@ -44,24 +44,23 @@ module.exports = {
       {
         test: /\.js?$/,
         include: [
-          path.join(process.cwd(), 'src', 'client'),
-          path.join(process.cwd(), 'src', 'common')
+          path.join(process.cwd(), 'demo', 'src', 'client'),
+          path.join(process.cwd(), 'demo', 'src', 'common'),
+          path.join(process.cwd(), 'src')
         ],
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'react', 'stage-1']
+            presets: ['es2015', 'react', 'stage-1'],
+            plugins: [
+              ['transform-object-assign'],
+              ["transform-decorators-legacy"],
+              ["transform-react-constant-elements"],
+              ["transform-react-inline-elements"]
+            ]
           }
-        }],
-        query: {
-          plugins: [
-            ['transform-object-assign'],
-            ["transform-decorators-legacy"],
-            ["transform-react-constant-elements"],
-            ["transform-react-inline-elements"]
-          ]
-        }
+        }]
       },
       {
         test: /\.css$/,

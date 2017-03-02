@@ -13,11 +13,11 @@ module.exports = {
   entry: {
     app: [
       'webpack-hot-middleware/client',
-      path.join(process.cwd(), 'src/client/client.js')
+      path.join(process.cwd(), 'demo/src/client/client.js')
     ]
   },
   output: {
-    path: path.join(process.cwd(), 'public'),
+    path: path.join(process.cwd(), 'demo/public'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -26,7 +26,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DllReferencePlugin({
       context: path.join(process.cwd()),
-      manifest: require(path.join(process.cwd(), "tools", "dll", "vendor-manifest.json"))
+      manifest: require(path.join(process.cwd(), "demo", "tools", "dll", "vendor-manifest.json"))
     }),
     new HappyPack({
       loaders: [ 'babel-loader?' + JSON.stringify({
@@ -61,8 +61,9 @@ module.exports = {
       {
         test: /\.js?$/,
         include: [
-          path.join(process.cwd(), 'src', 'client'),
-          path.join(process.cwd(), 'src', 'common')
+          path.join(process.cwd(), 'demo', 'src', 'client'),
+          path.join(process.cwd(), 'demo', 'src', 'common'),
+          path.join(process.cwd(), 'src')
         ],
         exclude: /(node_modules|public)/,
         loader: path.join(process.cwd(), "node_modules", 'happypack', 'loader.js'),
@@ -81,41 +82,4 @@ module.exports = {
 
     ]
   }
-}
-
-// This will make the redux-simpler-router module resolve to the
-// latest src instead of using it from npm. Remove this if running
-// outside of the source.
-
-let src = path.join(__dirname, '../../src/react-easy-transition.js')
-let react = path.join(__dirname, '../../node_modules/react')
-let fs = require('fs')
-if (fs.existsSync(src)) {
-  console.log('use src', src)
-  // Use the latest src
-  module.exports.resolve = {
-    alias: {
-      'react-easy-transition': src,
-      'react': react
-    }
-  }
-  module.exports.module.rules.push(
-    {
-      test: /\.js?$/,
-      include: [
-        src
-      ],
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015', 'react', 'stage-1'],
-          plugins: [
-            ['transform-object-assign'],
-            ["transform-react-constant-elements"],
-            ["transform-react-inline-elements"]
-          ]
-        }
-      }]
-    }
-  )
 }

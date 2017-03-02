@@ -50,6 +50,21 @@ Optionally set a leaveStyle if it is different than the initialStyle:
 </EasyTransition>
 ```
 
+You can set a custom component or classname if needed
+
+```jsx
+<EasyTransition
+    path={location.pathname}
+    initialStyle={{opacity: 0, color: 'red'}}
+    transition="opacity 0.3s ease-in, color 0.5s ease-in"
+    finalStyle={{opacity: 1, color: 'green'}}
+    component="MyCustomReactComponent"
+    className="myCustomCSSClass"
+>
+    {this.props.children}
+</EasyTransition>
+```
+
 ## Live Demo
 
 [Live Demo here](http://misterfresh.github.io/react-easy-transition)

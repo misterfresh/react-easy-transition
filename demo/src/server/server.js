@@ -80,7 +80,7 @@ if (__PROD__ || __TEST__) {
   });
 }
 
-server.use(express.static(path.join(process.cwd(), 'public')))
+server.use(express.static(path.join(process.cwd(), 'demo', 'public')))
 server.get('*', (req, res) => (require('./render/router'))(req, res, __PROD__) )
 
 server.listen(port, '0.0.0.0', (err) => {

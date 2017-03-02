@@ -1,0 +1,30 @@
+[
+  {
+    "image":"assets/images/slideshow/slide1.jpg",
+    "caption":{
+      "title":"React Slider",
+      "description":"with custom transition using react-easy-transition"
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide2.jpg",
+    "caption":{
+      "title":"The second page",
+      "description":"two more pages to go after this one"
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide3.jpg",
+    "caption":{
+      "title":"Almost the last page",
+      "description":"very few people will read this"
+    }
+  },
+  {
+    "image":"assets/images/slideshow/slide4.jpg",
+    "caption":{
+      "title":"The last page",
+      "description":"after that the slider will show the first page again"
+    }
+  }
+]

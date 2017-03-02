@@ -1,8 +1,37 @@
 {
-    "presets": ["es2015", "react", "stage-1"],
-    "plugins": [
-        "transform-es3-member-expression-literals",
-        "transform-es3-property-literals",
-        "transform-object-assign"
-    ]
+  "presets": ["es2015", "react", "stage-1"],
+  "env": {
+    "production": {
+      "plugins": ["transform-react-constant-elements", "transform-react-inline-elements"]
+    }
+  },
+  "plugins": [
+      ["transform-es3-member-expression-literals"],
+      ["transform-es3-property-literals"],
+      ["transform-object-assign"],
+      ["transform-runtime"],
+      ["module-alias", [
+        { "src":"./demo/src/client", "expose": "client"},
+        { "src":"./demo/src/common/actions", "expose": "actions"},
+        { "src":"./demo/public/assets", "expose": "assets"},
+        { "src":"./demo/src/common", "expose": "common"},
+        { "src":"./demo/src/common/components", "expose": "components"},
+        { "src":"./demo/src/common/constants.js", "expose": "constants"},
+        { "src":"./demo/src/common/containers", "expose": "containers"},
+        { "src":"./demo/public", "expose": "public"},
+        { "src":"./demo/src/common/reducers", "expose": "reducers"},
+        { "src":"./demo/src/common/routes", "expose": "routes"},
+        { "src":"./demo/src/common/store", "expose": "store"},
+        { "src":"./demo/test", "expose": "test"},
+        { "src":"./demo/tools", "expose": "tools"},
+        { "src":"./demo/src/common/utils", "expose": "utils"},
+        { "src":"./node_modules", "expose": "node_modules"},
+        { "src":"./lib/ReactEasyTransition.js", "expose": "react-easy-transition"}
+    ]],
+    ["transform-object-assign"],
+    ["transform-decorators-legacy"]
+],
+  "ignore": [
+    "*.css"
+  ]
 }
