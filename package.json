@@ -49,8 +49,7 @@
     "upload-app": "aws s3 cp ./demo/build/client/app.min.js s3://react-easy-transition/assets/js/app.min.js --acl public-read",
     "upload-vendors": "aws s3 cp ./demo/build/client/vendors.min.js s3://react-easy-transition/assets/js/vendors.min.js --acl public-read",
     "upload": "npm run upload-app && npm run upload-vendors",
-    "start": "node ./demo/build/server/server/server.js",
-    "heroku-prebuild":"heroku config:set NPM_CONFIG_PRODUCTION=false NODE_ENV=production"
+    "start": "node ./demo/build/server/server/server.js"
   },
   "tags": [
     "react",
