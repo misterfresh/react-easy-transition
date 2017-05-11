@@ -65,7 +65,7 @@ You can set a custom component or classname if needed
 </EasyTransition>
 ```
 
-NOTE: If your "<Link>" component (or any child of this) has any styling / classes that use "transition", make sure not to use "transition: all" as this will prevent react-easy-transition from fading out.
+**NOTE**: If your `<Link` component (or any child of this) has any styling / classes that use `transition`, make sure not to use `transition: all` as this will prevent react-easy-transition from fading out.
 
 ## Live Demo
 
