@@ -65,6 +65,8 @@ You can set a custom component or classname if needed
 </EasyTransition>
 ```
 
+**NOTE**: If your `<Link>` component (or any children of this) contains styling/classes that use `transition`, make sure **not** to use `transition: all` as this will prevent react-easy-transition from fading out.
+
 ## Live Demo
 
 [Live Demo here](https://react-easy-transition.herokuapp.com/)
