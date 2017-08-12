@@ -8,13 +8,15 @@ import {
 export function browseSlide(direction){
   return {
     type: BROWSE_SLIDE,
-    direction
+    direction,
+    updatedAt: Date.now()
   }
 }
 
 export function setActiveSlide(event){
   return {
     type: SET_ACTIVE_SLIDE,
-    slideId: event.target.getAttribute('data-slideId')
+    slideId: event.target.getAttribute('data-slideId'),
+    updatedAt: Date.now()
   }
 }

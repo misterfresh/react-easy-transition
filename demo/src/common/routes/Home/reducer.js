@@ -11,7 +11,8 @@ import slides from './data/slides.json'
 
 const initialState = Immutable.fromJS({
   slides,
-  activeSlideId: 0
+  activeSlideId: 0,
+  updatedAt: Date.now()
 })
 
 export default function home(state = initialState, action) {
@@ -19,9 +20,18 @@ export default function home(state = initialState, action) {
   switch(action.type){
 
     case SET_ACTIVE_SLIDE:
+      if(action.updatedAt - state.get('updatedAt') < 2000 ){
+        return state
+      }
+
       return state.set('activeSlideId', parseInt(action.slideId))
+        .set('updatedAt', action.updatedAt)
 
     case BROWSE_SLIDE:
+      if(action.updatedAt - state.get('updatedAt') < 2000 ){
+        return state
+      }
+
       let direction = action.direction
       let currentId = state.get('activeSlideId')
       let slidesCount = state.get('slides').size
@@ -40,6 +50,7 @@ export default function home(state = initialState, action) {
         }
       }
       return state.set('activeSlideId', finalId)
+        .set('updatedAt', action.updatedAt)
 
     default:
       return state

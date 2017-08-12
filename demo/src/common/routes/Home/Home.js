@@ -28,7 +28,7 @@ class Home extends Component {
     if(('development' !== process.env.NODE_ENV) && !globalData.get('slideshowBrowsing')){
       globalData.set('slideshowBrowsing', window.setInterval(()=>{
         homeActions.browseSlide('next')
-      }, 6000))
+      }, 7000))
     }
   }
 
