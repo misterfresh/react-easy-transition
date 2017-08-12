@@ -1,6 +1,7 @@
 'use strict'
 
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import ReactTransitionGroup from 'react-addons-transition-group'
 
 import TransitionChild from './TransitionChild'
@@ -8,7 +9,7 @@ import TransitionChild from './TransitionChild'
 export default class ReactEasyTransition extends Component {
   state = {
     visible: true
-  };
+  }
   static propTypes = {
     path: PropTypes.string.isRequired,
     initialStyle: PropTypes.object.isRequired,
@@ -17,11 +18,11 @@ export default class ReactEasyTransition extends Component {
     leaveStyle: PropTypes.object,
     className: PropTypes.string,
     component: PropTypes.string
-  };
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      visible: (this.props.path === nextProps.path || (typeof this.props.path === 'undefined'))
+      visible: this.props.path === nextProps.path || typeof this.props.path === 'undefined'
     })
   }
 
@@ -36,12 +37,16 @@ export default class ReactEasyTransition extends Component {
       <ReactTransitionGroup
         transitionName="fade"
         className={this.props.className}
-        component={this.props.component || "div"}
+        component={this.props.component || 'div'}
       >
         {this.state.visible &&
-        <TransitionChild key={this.props.path} childDidLeave={this.childDidLeave.bind(this)} {...this.props}>
-          {this.props.children}
-        </TransitionChild>}
+          <TransitionChild
+            key={this.props.path}
+            childDidLeave={this.childDidLeave.bind(this)}
+            {...this.props}
+          >
+            {this.props.children}
+          </TransitionChild>}
       </ReactTransitionGroup>
     )
   }
