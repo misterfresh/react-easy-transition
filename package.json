@@ -4,7 +4,7 @@
   "description": "Easy transitions with React and React-router",
   "main": "./lib/ReactEasyTransition.js",
   "engines": {
-    "node": "4.x || 5.x || 6.x || 7.x || 8.x || 9.x"
+    "node": "4.x || 5.x || 6.x || 7.x || 8.x || 9.x || 10.x"
   },
   "files": [
     "*.md",
